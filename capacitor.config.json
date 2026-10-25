@@ -1,0 +1,8 @@
+{
+  "appId": "com.amw.simulator",
+  "appName": "AMW Simulator",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}
