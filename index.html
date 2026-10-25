@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#071426" />
+  <title>AMW Simulator</title>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">A</span><div><strong>AMW <span>SIMULATOR</span></strong><small>AVIAÇÃO • GESTÃO • MUNDO</small></div></div>
+      <div class="topstats">
+        <div><small>CONTA</small><strong id="money">$9,486,931</strong></div>
+        <div><small>VOOS</small><strong id="flightCount">08</strong></div>
+        <button class="icon-button" data-panel="mensagens" aria-label="Mensagens">✉</button>
+        <button class="icon-button" data-panel="configurações" aria-label="Configurações">⚙</button>
+      </div>
+    </header>
+
+    <div class="ticker"><span class="live-dot"></span><span id="tickerText">ABNordestina • Centro de operações • Todos os sistemas operacionais</span><span class="ticker-tag">AO VIVO</span></div>
+
+    <main class="main-layout">
+      <section class="map-section">
+        <div class="map-heading">
+          <div><p class="eyebrow">CENTRO DE OPERAÇÕES</p><h1>Mapa mundial</h1><p class="subheading">Acompanhe sua companhia em tempo real</p></div>
+          <div class="map-status"><span class="live-dot"></span> SIMULAÇÃO ATIVA</div>
+        </div>
+        <div class="map-wrap">
+          <div id="map" aria-label="Mapa mundial interativo"></div>
+          <div class="map-overlay top-left"><span class="mini-label">COMPANHIA</span><strong>ABN <span class="muted">NORDESTINA</span></strong><small>Base principal: GRU • Brasil</small></div>
+          <div class="map-overlay map-legend"><span><i class="legend-plane">✈</i> Aeronaves</span><span><i class="legend-route"></i> Rotas ativas</span><span><i class="legend-airport"></i> Aeroportos</span></div>
+          <button class="map-control zoom-home" id="homeMap" aria-label="Ver mundo">◎</button>
+        </div>
+        <div class="quick-stats">
+          <div class="quick-stat"><span class="stat-icon blue">✈</span><div><small>EM VOO</small><strong id="airborneStat">8</strong></div><span class="stat-trend">+2 hoje</span></div>
+          <div class="quick-stat"><span class="stat-icon green">⌖</span><div><small>DESTINOS</small><strong>24</strong></div><span class="stat-trend">12 países</span></div>
+          <div class="quick-stat"><span class="stat-icon gold">$</span><div><small>RECEITA DO DIA</small><strong id="revenue">$128,450</strong></div><span class="stat-trend">+8.4%</span></div>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <div class="panel-title"><div><p class="eyebrow">GESTÃO DA EMPRESA</p><h2>Painel de controle</h2></div><span class="status-pill">OPERACIONAL</span></div>
+        <div class="company-card">
+          <div class="company-emblem">ABN</div><div class="company-info"><strong>Aviação Brasileira Nordestina</strong><small>Companhia aérea • Nível 1</small><div class="progress"><span></span></div><small>Progresso da empresa <b>32%</b></small></div>
+        </div>
+        <div class="menu-grid">
+          <button class="menu-card active" data-panel="visão geral"><span class="menu-icon">▦</span><strong>Visão geral</strong><small>Resumo da operação</small></button>
+          <button class="menu-card" data-panel="frota"><span class="menu-icon">✈</span><strong>Frota</strong><small>8 aeronaves</small></button>
+          <button class="menu-card" data-panel="compras"><span class="menu-icon">＋</span><strong>Comprar aviões</strong><small>Expandir frota</small></button>
+          <button class="menu-card" data-panel="combustível"><span class="menu-icon">◉</span><strong>Combustível</strong><small>Reservas e preços</small></button>
+          <button class="menu-card" data-panel="manutenção"><span class="menu-icon">⚒</span><strong>Manutenção</strong><small>Estado das aeronaves</small></button>
+          <button class="menu-card" data-panel="finanças"><span class="menu-icon">$</span><strong>Finanças</strong><small>Receitas e despesas</small></button>
+          <button class="menu-card" data-panel="aeroportos"><span class="menu-icon">⌖</span><strong>Aeroportos</strong><small>Destinos e bases</small></button>
+          <button class="menu-card" data-panel="notícias"><span class="menu-icon">▤</span><strong>Notícias</strong><small>Mercado da aviação</small></button>
+        </div>
+        <div class="flight-list-header"><div><p class="eyebrow">ACOMPANHAMENTO</p><h3>Voos ativos</h3></div><button class="text-button" data-panel="frota">Ver todos ↗</button></div>
+        <div id="flightList" class="flight-list"></div>
+      </aside>
+    </main>
+    <nav class="bottom-nav">
+      <button class="nav-item selected" data-panel="visão geral"><span>▦</span>Início</button>
+      <button class="nav-item" data-panel="frota"><span>✈</span>Frota</button>
+      <button class="nav-item" data-panel="compras"><span>＋</span>Compras</button>
+      <button class="nav-item" data-panel="finanças"><span>$</span>Finanças</button>
+      <button class="nav-item" data-panel="mais"><span>•••</span>Mais</button>
+    </nav>
+    <div id="panelModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-backdrop" data-close="true"></div>
+      <section class="modal-card"><button class="modal-close" data-close="true" aria-label="Fechar">×</button><p class="eyebrow">AMW SIMULATOR</p><h2 id="modalTitle">Painel</h2><div id="modalContent"></div></section>
+    </div>
+    <div id="toast" class="toast" role="status"></div>
+  </div>
+  <script type="module" src="/src.js"></script>
+</body>
+</html>
